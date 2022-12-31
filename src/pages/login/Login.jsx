@@ -29,7 +29,7 @@ const Login = ({setLogin, admin, counselor}) => {
 
         axios.post("/admin/login", user)
         .then((res) => {
-            console.log(res);
+            console.log(res.data.user.role);
             if(res.data.user.role === 'admin') {
                 cookies.set('admin_token', res.data.token, {maxAge: 86400000})
                 cookies.set('admin', res.data.user, {maxAge: 86400000})
