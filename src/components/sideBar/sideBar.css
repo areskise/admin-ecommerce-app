@@ -1,0 +1,46 @@
+.center {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding-right: 90px;
+    background-color: #fff;
+    width: 160px;
+    z-index: 1;
+}
+
+.title {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    margin-top: 6px;
+    color: #634efa;
+    opacity: 0.8;
+}
+
+a:hover {
+    opacity: 1;
+
+}
+
+a>span {
+    color: #000;
+}
+
+li {
+    margin: 5px 0px 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+}

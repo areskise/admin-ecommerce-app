@@ -1,0 +1,129 @@
+li {
+    list-style: none;
+}
+
+.info {
+    margin: 20px auto;
+}
+
+.nav>h3 { 
+    margin: 10px 0px 10px 40px;
+}
+
+.addRoom__container {
+    display: flex;
+    padding: 40px;
+    flex-direction: row;
+}
+
+.addRoomInfo{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.addRoomInfo__board {
+    margin: auto;
+    box-shadow: 3px 3px 15px lightgray;
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1024px;
+}
+
+.addRoomInfo__board-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+}
+
+.addRoomInfo__board-title>h2{
+    float: left;
+}
+
+.addRoomInfo__board-title>a {
+    background: none;
+    border-radius: 3px;
+    border: 1px solid green;
+    color: green;
+    padding: 7px;
+    cursor: pointer;
+    float: right;
+}
+
+.addRoomInfo__board-table {
+    width: 100%;
+
+}
+
+.form__container {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__container-title {
+    margin-left: 20px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 120px;
+    row-gap: 5px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 0px 20px;
+}
+
+.form-control>input {
+    height: 40px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.form-control-room {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+    grid-column: 1/-1
+}
+
+.form-control-room>textarea {
+    overflow-y: scroll;
+}
+
+select {
+    width: 100%;
+    height: 40px;
+}
+
+.add-button {
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    background-color: #0b8080;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.error {
+    color: red;
+}
+
+.input-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+

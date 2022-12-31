@@ -1,0 +1,128 @@
+
+li {
+    list-style: none;
+}
+
+.nav>h3 { 
+    margin: 10px 0px 10px 40px;
+}
+
+.dashboard__container {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    gap: 40px;
+}
+
+.dashboard__container > h2 {
+    font-weight: 500;
+}
+
+.transaction__container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 3px 15px lightgray;
+    margin: 40px 7px;
+}
+
+.dashboardInfo {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboardInfo__board {
+    box-shadow: 3px 3px 15px lightgray;
+    padding: 30px 20px 20px 20px;
+}
+
+.dashboardInfo__board-items{
+    display: flex;
+    float: left;
+    width: 100%;
+    gap: 10px
+}
+
+.dashboardInfo__board-item {
+    float: left;
+    width: 24%;
+    height: 100%;
+    margin: auto;
+    box-shadow: 3px 3px 15px lightgray;
+}
+
+.dashboardInfo__board-item>h4{
+    margin: 20px 0px 20px 20px;
+}
+
+.dashboardInfo__board-item>p {
+    margin-left: 20px;
+    font-size:x-large;
+}
+
+.dashboardInfo__board-item>span {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.table__status {
+    padding: 5px;
+    background-color: #F5B9AC;
+    color: #0E820A;
+    border-radius: 5px;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.dashboardInfo__board-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+}
+
+.dashboardInfo__board-title>h2{
+    float: left;
+}
+
+.dashboardInfo__board-table {
+    margin-bottom: 20px;
+}
+
+table { 
+    border: 1px solid lightgray;
+    text-align: left;
+    border-collapse: collapse;
+    width: auto;
+}
+
+tbody>tr, thead>tr {
+    border: 1px solid lightgray
+}
+
+td, th {
+    padding: 15px;
+    max-width: 424px;
+}
+
+th>span {
+    border-left: 1px solid lightgray;
+    margin-right: 5px;
+}
+
+.paging__button {
+    background: none;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+.paging__button:hover {
+    color: #000;
+}

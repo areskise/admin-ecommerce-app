@@ -1,0 +1,153 @@
+li {
+    list-style: none;
+}
+
+.info {
+    margin: 20px auto;
+}
+
+.nav>h3 { 
+    margin: 10px 0px 10px 40px;
+}
+
+.hotel__container {
+    display: flex;
+    padding: 40px;
+}
+
+.hotel-side-bar {
+    flex: 1
+}
+
+.hotelInfo{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotelInfo__board {
+    margin: 20px auto;
+    box-shadow: 5px 5px 15px lightgray;
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hotelInfo__board-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+}
+
+.hotelInfo__board-title>h4{
+    float: left;
+}
+
+.hotelInfo__board-title>a {
+    background: none;
+    border-radius: 3px;
+    border: 1px solid green;
+    color: green;
+    padding: 7px;
+    cursor: pointer;
+    float: right;
+}
+
+.hotelInfo__board-table {
+    margin-bottom: 20px;
+}
+
+.hotelInfo__board-items{
+    display: flex;
+    float: left;
+    width: 100%;
+}
+
+.hotelInfo__board-item>h4{
+    margin: 20px 0px 20px 20px;
+}
+
+.hotelInfo__board-item>p {
+    margin-left: 20px;
+    font-size:x-large;
+}
+
+.hotelInfo__board-item>span {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    display: flex;
+    outline: none;
+    width: 25%;
+    min-width: 256px;
+    height: 32px;
+    border: 1px solid #ccc;
+}
+
+table { 
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+tbody>tr, thead>tr {
+    border: 1px solid lightgray
+}
+
+th>span {
+    border-left: 1px solid lightgray;
+    margin-right: 5px;
+}
+
+td, th {
+    padding: 15px;
+    max-width: 424px;
+}
+
+.end {
+    text-align: right;
+}
+
+.paging__button {
+    background: none;
+    color: #333;
+    border: none;
+    cursor: pointer;
+}
+
+.paging__button:hover {
+    color: #000;
+}
+
+.delete-button {
+    background: none;
+    border-radius: 3px;
+    border: 1px solid red;
+    border-style: dashed;
+    color: red;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-button {
+    background: none;
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1px solid #ff9900;
+    border-style: dashed;
+    color: #ff9900;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+

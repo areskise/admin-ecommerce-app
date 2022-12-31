@@ -1,0 +1,30 @@
+.navbar{
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .navContainer{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    z-index: 2;
+  }
+  
+  .logo{
+    display: flex;
+    height: 50px;
+    text-align: center;
+    font-weight: 500;
+    color: #634efa;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 80px;
+    border-right: 1px solid #ccc;
+  }
