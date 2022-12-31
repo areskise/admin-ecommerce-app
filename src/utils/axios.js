@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 const instance = axios.create({
-	baseURL: 'http://localhost:5000/',
+	baseURL: 'https://server-ecommerce-app.vercel.app/',
 	withCredentials: true,
 	headers: {
 		'content-type': 'application/json',

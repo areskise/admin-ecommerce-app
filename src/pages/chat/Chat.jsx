@@ -6,7 +6,7 @@ import axios from '../../utils/axios';
 import './chat.css';
 
 import io from 'socket.io-client';
-const socket = io('http://localhost:5000', { transports : ['websocket']});
+const socket = io('https://server-ecommerce-app.vercel.app/', { transports : ['websocket']});
 
 const Chats = ({login}) => {
     const [textMessage, setTextMessage] = useState('');
