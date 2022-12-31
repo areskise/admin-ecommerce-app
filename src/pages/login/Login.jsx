@@ -30,15 +30,15 @@ const Login = ({setLogin, admin, counselor}) => {
         axios.post("/admin/login", user)
         .then((res) => {
             console.log(res);
-            if(res.user.role === 'admin') {
-                cookies.set('admin_token', res.token, {maxAge: 86400000})
-                cookies.set('admin', res.user, {maxAge: 86400000})
+            if(res.data.user.role === 'admin') {
+                cookies.set('admin_token', res.data.token, {maxAge: 86400000})
+                cookies.set('admin', res.data.user, {maxAge: 86400000})
                 navigate('/dashboard');
                 setLogin(true)
             }
-            if(res.user.role === 'counselor') {
-                cookies.set('admin_token', res.token, {maxAge: 86400000})
-                cookies.set('counselor', res.user, {maxAge: 86400000})
+            if(res.data.user.role === 'counselor') {
+                cookies.set('admin_token', res.data.token, {maxAge: 86400000})
+                cookies.set('counselor', res.data.user, {maxAge: 86400000})
                 navigate('/chat');
                 setLogin(true)
             }
