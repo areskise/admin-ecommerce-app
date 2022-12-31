@@ -8,16 +8,21 @@ import {
     faRightToBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Cookies from 'universal-cookie';
 import axios from "../../utils/axios";
 import { useNavigate } from 'react-router-dom';
 import './sideBar.css'
 
 const SideBar = ({login, setLogin, admin, counselor}) => {
+	const cookies = new Cookies();
     const navigate = useNavigate();
 
     const logoutClick = async () => {
       try {
         await axios.post("/admin/logout")
+        cookies.remove('admin_token')
+        cookies.remove('admin')
+        cookies.remove('counselor')
         setLogin(false)
         navigate('/');
       } catch (err) {

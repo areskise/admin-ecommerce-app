@@ -1,9 +1,11 @@
 import './login.css';
 import React, { useState, useEffect } from 'react';
+import Cookies from 'universal-cookie';
 import axios from '../../utils/axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({setLogin, admin, counselor}) => {
+	const cookies = new Cookies();
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [error, setError] = useState(false);
@@ -27,11 +29,16 @@ const Login = ({setLogin, admin, counselor}) => {
 
         axios.post("/admin/login", user)
         .then((res) => {
-            if(res.data.role === 'admin') {
+            console.log(res);
+            if(res.user.role === 'admin') {
+                cookies.set('admin_token', res.token, {maxAge: 86400000})
+                cookies.set('admin', res.user, {maxAge: 86400000})
                 navigate('/dashboard');
                 setLogin(true)
             }
-            if(res.data.role === 'counselor') {
+            if(res.user.role === 'counselor') {
+                cookies.set('admin_token', res.token, {maxAge: 86400000})
+                cookies.set('counselor', res.user, {maxAge: 86400000})
                 navigate('/chat');
                 setLogin(true)
             }
