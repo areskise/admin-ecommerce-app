@@ -17,7 +17,7 @@ let channel = pusher.subscribe('ecommerce-app');
 
 const Chats = ({login}) => {
     const [textMessage, setTextMessage] = useState('');
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState('');
     const [roomId, setRoomId] = useState();
     const [chatrooms, setChatrooms] = useState([]);
 	const [message, setMessage] = useState([]);
