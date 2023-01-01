@@ -91,7 +91,9 @@ const Chats = ({login}) => {
             //     // socket.emit('send_message', data);
 			// 	// channel.trigger("send_message", data);
             // }, 200);
-            setLoad(true)
+            setTimeout(() => {
+                setLoad(true)
+            }, 500);
         } else {
             alertify.set('notifier', 'position', 'top-right');
             alertify.error('Select a room chat!');
