@@ -5,8 +5,14 @@ import alertify from 'alertifyjs';
 import axios from '../../utils/axios';
 import './chat.css';
 
-import io from 'socket.io-client';
-const socket = io('https://server-ecommerce-app.vercel.app/', { transports : ['websocket']});
+// import io from 'socket.io-client';
+// const socket = io('https://server-ecommerce-app.vercel.app/', { transports : ['websocket']});
+import Pusher from 'pusher-js';
+let pusher = new Pusher('eab36ba3e13ebc083cfe', {
+    cluster: 'ap1',
+});
+
+let channel = pusher.subscribe('ecommerce-app');
 
 const Chats = ({login}) => {
     const [textMessage, setTextMessage] = useState('');
@@ -82,9 +88,9 @@ const Chats = ({login}) => {
             axios.put('/chatrooms/addMessage', data);
             setTextMessage('');
             
-            setTimeout(() => {
-                socket.emit('send_message', data);
-            }, 200);
+            // setTimeout(() => {
+            //     // socket.emit('send_message', data);
+            // }, 200);
             setLoad(true)
         } else {
             alertify.set('notifier', 'position', 'top-right');
@@ -101,21 +107,36 @@ const Chats = ({login}) => {
 	}, [load]);
 
 	useEffect(() => {
-        socket.on('send_message', (data) => {
+        // socket.on('send_message', (data) => {
+        //     console.log(data);
+        //     setLoad(true);
+        // });
+		// socket.on('create_room', (data) => {
+        //     console.log(data);
+		// 	setLoad(true);
+		// });
+        // socket.on('end_room', (data) => {
+        //     console.log(data);
+        //     if(roomId===data.roomId) {
+        //         setMessage([]);
+        //     }
+		// 	setLoad(true);
+		// });
+        channel.bind('send_message', function (data) {
             console.log(data);
             setLoad(true);
         });
-		socket.on('create_room', (data) => {
+        channel.bind('create_room', function (data) {
             console.log(data);
-			setLoad(true);
-		});
-        socket.on('end_room', (data) => {
+            setLoad(true);
+        });
+        channel.bind('end_room', function (data) {
             console.log(data);
             if(roomId===data.roomId) {
                 setMessage([]);
             }
-			setLoad(true);
-		});
+            setLoad(true);
+        });
 	}, []);
 
     return (
