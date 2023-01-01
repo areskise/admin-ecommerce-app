@@ -187,7 +187,7 @@ const Chats = ({login}) => {
                                                         alt='...'
                                                     />
 													<p className='mess'>
-                                                        {value.message}
+                                                        Client: {value.message}
                                                     </p>
 												</div>
 											</div>
@@ -197,7 +197,9 @@ const Chats = ({login}) => {
 											>
 												{' '}
 												<div className='media-body'>
-													<p>{value.message}</p>
+													<p>
+                                                        You: {value.message}
+                                                    </p>
 												</div>
 											</div>
 										)
