@@ -88,9 +88,10 @@ const Chats = ({login}) => {
             axios.put('/chatrooms/addMessage', data);
             setTextMessage('');
             
-            // setTimeout(() => {
-            //     // socket.emit('send_message', data);
-            // }, 200);
+            setTimeout(() => {
+                // socket.emit('send_message', data);
+				channel.trigger("send_message", data);
+            }, 200);
             setLoad(true)
         } else {
             alertify.set('notifier', 'position', 'top-right');
