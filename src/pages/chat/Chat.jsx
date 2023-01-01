@@ -10,6 +10,7 @@ import './chat.css';
 import Pusher from 'pusher-js';
 let pusher = new Pusher('eab36ba3e13ebc083cfe', {
     cluster: 'ap1',
+	encrypted: true
 });
 
 let channel = pusher.subscribe('ecommerce-app');
@@ -90,7 +91,7 @@ const Chats = ({login}) => {
             
             setTimeout(() => {
                 // socket.emit('send_message', data);
-				channel.trigger("send_message", data);
+				// channel.trigger("send_message", data);
             }, 200);
             setLoad(true)
         } else {
