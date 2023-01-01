@@ -30,7 +30,6 @@ const Chats = ({login}) => {
     const onChangeSearch = (e) => {
         setSearch(e.target.value);
     };
-    console.log(search);
     const fetchRoom = () => {
         console.log(search);
         axios.get(`/chatrooms?search=${search}`)
