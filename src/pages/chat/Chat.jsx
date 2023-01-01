@@ -17,7 +17,7 @@ let channel = pusher.subscribe('ecommerce-app');
 
 const Chats = ({login}) => {
     const [textMessage, setTextMessage] = useState('');
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(null);
     const [roomId, setRoomId] = useState();
     const [chatrooms, setChatrooms] = useState([]);
 	const [message, setMessage] = useState([]);
@@ -30,6 +30,7 @@ const Chats = ({login}) => {
     const onChangeSearch = (e) => {
         setSearch(e.target.value);
     };
+    console.log(search);
     const fetchRoom = () => {
         console.log(search);
         axios.get(`/chatrooms?search=${search}`)
@@ -123,15 +124,15 @@ const Chats = ({login}) => {
 		// 	setLoad(true);
 		// });
         channel.bind('send_message', function (data) {
-            console.log(data);
+            console.log('send_message: ', data);
             setLoad(true);
         });
         channel.bind('create_room', function (data) {
-            console.log(data);
+            console.log('create_room: ', data);
             setLoad(true);
         });
         channel.bind('end_room', function (data) {
-            console.log(data);
+            console.log('end_room: ', data);
             if(roomId===data.roomId) {
                 setMessage([]);
             }
