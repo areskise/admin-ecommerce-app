@@ -60,6 +60,11 @@ const Login = ({setLogin, admin, counselor}) => {
                 id='email'
                 onChange={(e) => setEmail(e.target.value)}
                 className='input'
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        handleLogin();
+                    }
+                }}
                 />
             </div>
             <div className='item'>
@@ -69,6 +74,11 @@ const Login = ({setLogin, admin, counselor}) => {
                 id='password'
                 onChange={(e) => setPassword(e.target.value)}
                 className='input'
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                        handleLogin();
+                    }
+                }}
                 />
             </div>
             <div className='item'>

@@ -216,7 +216,7 @@ const Chats = ({login}) => {
 									placeholder='Enter Message!'
 									onChange={onChangeText}
 									value={textMessage}
-									onKeyPress={(e) => {
+									onKeyDown={(e) => {
 										if (e.key === 'Enter') {
 											handlerSend();
 										}
