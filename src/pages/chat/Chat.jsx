@@ -8,12 +8,12 @@ import './chat.css';
 // import io from 'socket.io-client';
 // const socket = io('https://server-ecommerce-app.vercel.app/', { transports : ['websocket']});
 import Pusher from 'pusher-js';
-let pusher = new Pusher('eab36ba3e13ebc083cfe', {
+const pusher = new Pusher('eab36ba3e13ebc083cfe', {
     cluster: 'ap1',
 	encrypted: true
 });
 
-let channel = pusher.subscribe('ecommerce-app');
+const channel = pusher.subscribe('ecommerce-app');
 
 const Chats = ({login}) => {
     const [textMessage, setTextMessage] = useState('');
