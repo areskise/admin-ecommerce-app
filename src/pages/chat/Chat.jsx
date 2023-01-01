@@ -62,13 +62,14 @@ const Chats = ({login}) => {
         if(roomId) {
             axios.get(`/chatrooms/getById?roomId=${roomId}`)
             .then(res => {
-                console.log(res);
+                if (res.data.messages) {
                     setRoomId(roomId);
                     setMessage(res.data.messages);
-                })
-                .catch(err => console.log(err))
-        } else {
-            setMessage([]);
+                } else {
+                    setMessage([]);
+                }
+            })
+            .catch(err => console.log(err))
         }
     }
 
@@ -134,6 +135,7 @@ const Chats = ({login}) => {
         });
         channel.bind('end_room', function (data) {
             console.log('end_room: ', data);
+            console.log(roomId);
             if(roomId===data.roomId) {
                 setMessage([]);
             }
