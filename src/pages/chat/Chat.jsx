@@ -36,8 +36,6 @@ const Chats = ({login}) => {
                 .then(res => {
                     console.log(res.data);
                     setChatrooms(res.data);
-                    setMessage([]);
-                    setRoomId();
                     setError(false)
                 })
                 .catch(err => {
