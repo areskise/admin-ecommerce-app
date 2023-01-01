@@ -84,16 +84,16 @@ const Chats = ({login}) => {
                 is_admin: true,
             };
 
-            axios.put('/chatrooms/addMessage', data);
-            setTextMessage('');
-            
-            // setTimeout(() => {
-            //     // socket.emit('send_message', data);
-			// 	// channel.trigger("send_message", data);
-            // }, 200);
-            setTimeout(() => {
-                setLoad(true)
-            }, 500);
+            axios.put('/chatrooms/addMessage', data)
+                .then(res => {
+                    setTextMessage('');
+                    // setTimeout(() => {
+                    //     // socket.emit('send_message', data);
+                    // 	// channel.trigger("send_message", data);
+                    // }, 200);
+                    setLoad(true)
+                })
+                .catch(err => console.log(err))
         } else {
             alertify.set('notifier', 'position', 'top-right');
             alertify.error('Select a room chat!');
