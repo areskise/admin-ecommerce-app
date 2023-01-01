@@ -62,7 +62,7 @@ const Chats = ({login}) => {
         if(roomId) {
             axios.get(`/chatrooms/getById?roomId=${roomId}`)
             .then(res => {
-                if (res.data.messages) {
+                if (res.data) {
                     setRoomId(roomId);
                     setMessage(res.data.messages);
                 } else {
