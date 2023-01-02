@@ -33,7 +33,7 @@ const EditProduct = ({admin}) => {
         for (let img of files){
             data.append('image', img);
         }
-        data.append('id', params.id);
+        data.append('id', id);
         data.append('name', e.target.name.value);
         data.append('price', e.target.price.value);
         data.append('category', e.target.category.value);
