@@ -1,5 +1,6 @@
 import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from 'react-router-dom';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -120,7 +121,7 @@ const Products = ({admin}) => {
                                             </td>
                                             <td>{product.category}</td>
                                             <td><button className='delete-button' onClick={(e) => handleDelete(product._id)}>Delete</button></td>
-                                            <td><a href={`/products/${product._id}`} className='edit-button' >Update</a></td>
+                                            <td><Link to={`/products/${product._id}`} className='edit-button' >Update</Link></td>
                                         </tr>
                                     ))}
                                 </tbody>
