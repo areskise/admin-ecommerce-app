@@ -89,7 +89,7 @@ const Products = ({admin}) => {
                             placeholder='Search Product'
                             onChange={onChangeSearch}
                         />
-                        <a href="/addProduct">Add New</a>
+                        <a href="/products/add">Add New</a>
                         </div>
                         <div className="hotelInfo__board-table">
                             <table>
@@ -120,7 +120,7 @@ const Products = ({admin}) => {
                                             </td>
                                             <td>{product.category}</td>
                                             <td><button className='delete-button' onClick={(e) => handleDelete(product._id)}>Delete</button></td>
-                                            <td><a href={`/editProduct/${product._id}`} className='edit-button' >Update</a></td>
+                                            <td><a href={`/products/${product._id}`} className='edit-button' >Update</a></td>
                                         </tr>
                                     ))}
                                 </tbody>

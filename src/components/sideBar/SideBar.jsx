@@ -71,7 +71,7 @@ const SideBar = ({login, setLogin, admin, counselor}) => {
                 </li>
                 <p className="title">NEW</p>
                 <li>
-                <a href="/addProduct">
+                <a href="/products/add">
                     <FontAwesomeIcon icon={faCartPlus} />
                     <span> New Product</span>
                 </a>
