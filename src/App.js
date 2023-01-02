@@ -35,8 +35,8 @@ function App() {
         <Route path="/products" element={<Products admin={admin}/>}/>
         <Route path="/orders" element={<Orders admin={admin}/>}/>
         <Route path="/orders/:id" element={<DetailHistory admin={admin}/>}/>
-        <Route path="/products/add" element={<AddProduct admin={admin}/>}/>
-        <Route path="/products/:id" element={<EditProduct admin={admin}/>}/>
+        <Route path="/addProduct" element={<AddProduct admin={admin}/>}/>
+        <Route path="/editProduct/:id" element={<EditProduct admin={admin}/>}/>
       </Routes>
     </BrowserRouter>
   );

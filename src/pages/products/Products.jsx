@@ -89,7 +89,7 @@ const Products = ({admin}) => {
                             placeholder='Search Product'
                             onChange={onChangeSearch}
                         />
-                        <a href="/products/add">Add New</a>
+                        <a href="/addProduct">Add New</a>
                         </div>
                         <div className="hotelInfo__board-table">
                             <table>
