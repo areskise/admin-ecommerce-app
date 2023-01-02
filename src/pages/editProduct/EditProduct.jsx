@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../utils/axios';
 import './editProduct.css';
 import alertify from 'alertifyjs';
-import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const EditProduct = ({admin}) => {
     const [error, setError] = useState(false);
@@ -12,19 +11,21 @@ const EditProduct = ({admin}) => {
     const data = new FormData();
     
     const navigate = useNavigate();
-    const params = useParams();
+    const { id } = useParams();
+    console.log(id);
 
     useEffect(() => {
         if(admin) {
-            axios.get(`/products/${params.id}`)
+            axios.get(`/products/${id}`)
               .then((res) => {
+                console.log(res);
                   setProduct(res.data);
               })
               .catch(err => console.log(err));
         } else {
             navigate('/');
         }
-      }, [admin, navigate, params.id]);
+      }, [admin, id]);
     
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -1,30 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import convertMoney from '../../convertMoney';
 import axios from '../../utils/axios';
 import './history.css';
 
 
-function DetailHistory(props) {
-	const { id } = useParams();
-
+function DetailHistory({admin}) {
 	const [cart, setCart] = useState([]);
-
 	const [information, setInformation] = useState({});
+	
+	const { id } = useParams();
+    const navigate = useNavigate();
+
 	useEffect(() => {
-		console.log(id);
-		const fetchData = async () => {
-			const response = await axios.get(`/histories/${id}`);
-
-			console.log(response.data);
-			
-			setCart(response.data.products);
-
-			setInformation(response.data);
-		};
-
-		fetchData();
-	}, [id]);
+		if(admin) {
+			console.log(id);
+			const fetchData = async () => {
+				const response = await axios.get(`/histories/${id}`);
+	
+				console.log(response.data);
+				
+				setCart(response.data.products);
+	
+				setInformation(response.data);
+			};
+	
+			fetchData();
+		} else {
+            navigate('/');
+		}
+	}, [admin, id]);
 
 	return (
 		<div className='container'>
