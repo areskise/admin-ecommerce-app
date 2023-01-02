@@ -16,12 +16,12 @@ const EditProduct = ({admin}) => {
 
     useEffect(() => {
         if(admin) {
-            axios.get(`/products/${id}`)
-              .then((res) => {
-                console.log(res);
-                  setProduct(res.data);
-              })
-              .catch(err => console.log(err));
+            const fetchData = async () => {
+                const res = await axios.get(`/products/${id}`)
+    
+                setProduct(res.data);
+            }
+			fetchData();
         } else {
             navigate('/');
         }
