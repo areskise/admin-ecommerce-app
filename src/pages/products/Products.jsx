@@ -121,7 +121,7 @@ const Products = ({admin}) => {
                                             </td>
                                             <td>{product.category}</td>
                                             <td><button className='delete-button' onClick={(e) => handleDelete(product._id)}>Delete</button></td>
-                                            <td><Link to={`/products/${product._id}`} className='edit-button' >Update</Link></td>
+                                            <td><Link to={`/editProduct/${product._id}`} className='edit-button' >Update</Link></td>
                                         </tr>
                                     ))}
                                 </tbody>
